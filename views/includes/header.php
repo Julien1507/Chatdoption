@@ -5,20 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chadoption</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .navbar { background-color: #4a3728; }
+        .navbar-brand { color: #d4a96a !important; font-weight: bold; }
+        .btn-orange {
+            background-color: #e8722a;
+            color: white;
+            border: none;
+            margin-bottom: 6px;
+        }
+        @media (max-width: 991px) {
+            .btn-orange { width: 100%; }
+        }
+        .btn-orange:hover { background-color: #c45e1a; color: white; }
+    </style>
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg" style="background-color: #4a3728;">
-    <div class="container">
+<nav class="navbar navbar-expand-lg">
+    <div class="container-fluid px-3">
 
-        
-        <a class="navbar-brand text-warning" href="#">🐾 chadoption</a>
+        <a class="navbar-brand" href="#">🐾 chadoption</a>
 
-        
-        <div class="d-flex gap-2">
-            <a href="#" class="btn btn-warning">Accueil</a>
-            <a href="#" class="btn btn-warning">Voir les chats</a>
-            <a href="#" class="btn btn-warning">Contact</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" style="border-color: #e8722a;">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navMenu">
+            <div class="d-flex flex-column flex-lg-row align-items-center gap-2 w-100 mt-2 mt-lg-0">                <a href="#" class="btn btn-orange">Accueil</a>
+                <a href="#" class="btn btn-orange">Voir les chats</a>
+                <a href="#" class="btn btn-orange">Contact</a>
+                <a href="#" class="btn btn-orange">Mes demandes</a>
+                <a href="#" class="btn btn-orange">Favoris</a>
+                <div class="ms-lg-auto d-flex flex-column flex-lg-row gap-2">
+                    <a href="#" class="btn btn-orange">Inscription / Profil</a>
+                    <a href="#" class="btn btn-orange">Connexion</a>
+                </div>
+            </div>
         </div>
 
     </div>
