@@ -1,6 +1,5 @@
 <?php
-session_start();
-require_once '../config/bdd.php';
+require_once '../config/db.php';
 require_once '../config/helpers.php';
 require_once '../models/UserModel.php';
 
@@ -30,6 +29,7 @@ if (isset($_POST['nom'])) {
             $emailError = "Cet email est déjà utilisé";
         } else {
             createUser($pdo, $nom, $prenom, $email, $mdp);
+            $_SESSION['success'] = "Inscription réussie, vous pouvez vous connecter !";
             header("Location: ../views/connexion.php");
             exit;
         }

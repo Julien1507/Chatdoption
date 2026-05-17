@@ -1,8 +1,8 @@
-<?php require_once '../views/includes/header.php'; ?>
+<?php require_once 'includes/header.php'; ?>
 
 
 <div style="position: relative;">
-    <img src="../public/images/banner.png" alt="banner" style="width:100%; height: 300px; object-fit: cover;">
+    <img src="images/banner.png" alt="banner" style="width:100%; height: 300px; object-fit: cover;">
     <div style="position: absolute; top: 50%; right: 45%; transform: translateY(-50%); color: #e8722a; font-size: 1.5rem; font-weight: bold; text-align: left;">
         Trouvez le chat qui va<br>changer votre quotidien.
     </div>
@@ -49,4 +49,4 @@
     </div>
 </div>
 
-<?php require_once '../views/includes/footer.php'; ?>
+<?php require_once 'includes/footer.php'; ?>

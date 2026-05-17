@@ -20,3 +20,16 @@ function createUser($pdo, $nom, $prenom, $email, $mdp) {
         'mot_de_passe' => $mdpHash
     ]);
 }
+
+/* check utilisateur + mdp */
+function findByEmailAndMdp($pdo, $email, $mdp) {
+    $stmt = $pdo->prepare("SELECT * FROM utilisateurs WHERE email = :email");
+    $stmt->execute(['email' => $email]);
+    $user = $stmt->fetch();
+
+    // password_verify compare le mdp saisi avec le hash en bdd
+    if ($user && password_verify($mdp, $user['mot_de_passe'])) {
+        return $user;
+    }
+    return false;
+}

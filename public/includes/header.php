@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -42,11 +43,14 @@
                 <a href="#" class="btn btn-orange">Mes demandes</a>
                 <a href="#" class="btn btn-orange">Favoris</a>
                 <div class="ms-lg-auto d-flex flex-column flex-lg-row gap-2">
-                    <a href="../views/inscription.php" class="btn btn-orange">Inscription / Profil</a>
-                    <a href="../views/connexion.php" class="btn btn-orange">Connexion</a>
+                    <?php if (isset($_SESSION['user'])): ?>
+                        <a href="../views/profil.php" class="btn btn-orange">Mon profil</a>
+                        <a href="../../controllers/deconnexionController.php" class="btn btn-orange">Déconnexion</a>
+                    <?php else: ?>
+                        <a href="../views/inscription.php" class="btn btn-orange">Inscription</a>
+                        <a href="../views/connexion.php" class="btn btn-orange">Connexion</a>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>
-
-    </div>
 </nav>
