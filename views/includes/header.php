@@ -17,7 +17,11 @@
         @media (max-width: 991px) {
             .btn-orange { width: 100%; }
         }
-        .btn-orange:hover { background-color: #c45e1a; color: white; }
+        .btn-orange:hover { background-color: #c45e1a; color: white; 
+        }
+        body {
+            background-color: #f5f0eb;
+        }
     </style>
 </head>
 <body>
@@ -38,8 +42,8 @@
                 <a href="#" class="btn btn-orange">Mes demandes</a>
                 <a href="#" class="btn btn-orange">Favoris</a>
                 <div class="ms-lg-auto d-flex flex-column flex-lg-row gap-2">
-                    <a href="#" class="btn btn-orange">Inscription / Profil</a>
-                    <a href="#" class="btn btn-orange">Connexion</a>
+                    <a href="../views/inscription.php" class="btn btn-orange">Inscription / Profil</a>
+                    <a href="../views/connexion.php" class="btn btn-orange">Connexion</a>
                 </div>
             </div>
         </div>
