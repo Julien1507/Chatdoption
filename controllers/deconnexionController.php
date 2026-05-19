@@ -1,4 +1,7 @@
 <?php
+
+session_start();
+require_once '../config/db.php';
 session_destroy(); 
-header("Location: ../public/index.php");
+header("Location: " . BASE_URL . "/index.php");
 exit;

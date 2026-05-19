@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once '../config/db.php';
 require_once '../models/UserModel.php';
 
@@ -19,11 +20,11 @@ if (isset($_POST['email'])) {
             'email' => $user['email'],
             'role'  => $user['role']
         ];
-        header("Location: ../public/index.php");
+        header("Location: " . BASE_URL . "/index.php");
         exit;
     } else {
         $error = "Email ou mot de passe incorrect";
     }
 }
 
-require_once '../views/connexion.php';
+require_once '../public/views/connexion.php';

@@ -1,4 +1,6 @@
-<?php session_start(); ?>
+<?php 
+session_start();
+require_once 'C:/wamp64/www/LBD/Chatdoption/config/db.php';?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -30,25 +32,26 @@
 <nav class="navbar navbar-expand-lg">
     <div class="container-fluid px-3">
 
-        <a class="navbar-brand" href="#">🐾 chadoption</a>
+        <a class="navbar-brand" href="<?= BASE_URL ?>/index.php">🐾 chadoption</a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" style="border-color: #e8722a;">
             <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navMenu">
-            <div class="d-flex flex-column flex-lg-row align-items-center gap-2 w-100 mt-2 mt-lg-0">                <a href="#" class="btn btn-orange">Accueil</a>
-                <a href="#" class="btn btn-orange">Voir les chats</a>
-                <a href="#" class="btn btn-orange">Contact</a>
-                <a href="#" class="btn btn-orange">Mes demandes</a>
-                <a href="#" class="btn btn-orange">Favoris</a>
+            <div class="d-flex flex-column flex-lg-row align-items-center gap-2 w-100 mt-2 mt-lg-0">                
+                <a href="<?= BASE_URL ?>/index.php" class="btn btn-orange">Accueil</a>
+                <a href="<?= BASE_URL ?>/views/chats.php" class="btn btn-orange">Voir les chats</a>
+                <a href="<?= BASE_URL ?>/contact.php" class="btn btn-orange">Contact</a>
+                <a href="<?= BASE_URL ?>/mes_demandes.php" class="btn btn-orange">Mes demandes</a>
+                <a href="<?= BASE_URL ?>/favoris.php" class="btn btn-orange">Favoris</a>
                 <div class="ms-lg-auto d-flex flex-column flex-lg-row gap-2">
                     <?php if (isset($_SESSION['user'])): ?>
-                        <a href="../views/profil.php" class="btn btn-orange">Mon profil</a>
-                        <a href="../../controllers/deconnexionController.php" class="btn btn-orange">Déconnexion</a>
+                        <a href="<?= BASE_URL ?>/views/profil.php" class="btn btn-orange">Mon profil</a>
+                        <a href="<?= BASE_URL ?>/controllers/deconnexionController.php" class="btn btn-orange">Déconnexion</a>
                     <?php else: ?>
-                        <a href="../views/inscription.php" class="btn btn-orange">Inscription</a>
-                        <a href="../views/connexion.php" class="btn btn-orange">Connexion</a>
+                        <a href="<?= BASE_URL ?>/views/inscription.php" class="btn btn-orange">Inscription</a>
+                        <a href="<?= BASE_URL ?>/views/connexion.php" class="btn btn-orange">Connexion</a>
                     <?php endif; ?>
                 </div>
             </div>

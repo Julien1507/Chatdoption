@@ -1,4 +1,8 @@
-<?php require_once 'includes/header.php'; ?>
+<?php require_once 'includes/header.php';
+require_once '../config/db.php';
+require_once '../models/ChatModel.php';
+$chats = getTroisChats($pdo);
+?>
 
 
 <div style="position: relative;">
@@ -17,35 +21,19 @@
 
 <div class="container my-4">
     <h2 class="text-center py-2 mb-4" style="background-color: #4a3728; color: #d4a96a; border-radius: 4px;">Chats du jour</h2>
-
-    <div class="row">
-        <div class="col-12 col-lg-4 mb-3">
-            <div class="border p-2" style="background-color: #3a2a1a; color: #d4a96a;">
-                <img src="assets/images/chat1.jpg" alt="chat" style="width:100%; height: 180px; object-fit: cover;">
-                <p class="mt-2 mb-0 small">Infos :</p>
-                <p class="mb-0 small">Nom :</p>
-                <p class="mb-0 small">Age :</p>
-                <p class="mb-0 small">Description :</p>
+<!-- for each pour afficher les 3 chats  -->
+    <div class="row align-items-stretch">
+        <?php foreach($chats as $chat): ?>
+        <div class="col-12 col-lg-4 mb-3 d-flex">
+            <div class="border p-2" style="background-color: #3a2a1a; color: #d4a96a; border-radius: 4px; width: 100%;">
+                <img src="<?= BASE_URL ?>/images/<?= $chat['image'] ?>" alt="<?= $chat['nom'] ?>" style="width:100%; height: 180px; object-fit: cover;">
+                <p class="mt-2 mb-0 small">Nom : <?= $chat['nom'] ?></p>
+                <p class="mb-0 small">Age : <?= $chat['age'] ?> ans</p>
+                <p class="mb-0 small">Race : <?= $chat['race'] ?></p>
+                <p class="mb-0 small" style="overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;"><?= $chat['description'] ?></p>
             </div>
         </div>
-        <div class="col-12 col-lg-4 mb-3">
-            <div class="border p-2" style="background-color: #3a2a1a; color: #d4a96a;">
-                <img src="assets/images/chat2.jpg" alt="chat" style="width:100%; height: 180px; object-fit: cover;">
-                <p class="mt-2 mb-0 small">Infos :</p>
-                <p class="mb-0 small">Nom :</p>
-                <p class="mb-0 small">Age :</p>
-                <p class="mb-0 small">Description :</p>
-            </div>
-        </div>
-        <div class="col-12 col-lg-4 mb-3">
-            <div class="border p-2" style="background-color: #3a2a1a; color: #d4a96a;">
-                <img src="assets/images/chat3.jpg" alt="chat" style="width:100%; height: 180px; object-fit: cover;">
-                <p class="mt-2 mb-0 small">Infos :</p>
-                <p class="mb-0 small">Nom :</p>
-                <p class="mb-0 small">Age :</p>
-                <p class="mb-0 small">Description :</p>
-            </div>
-        </div>
+    <?php endforeach; ?>
     </div>
 </div>
 

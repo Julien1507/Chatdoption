@@ -4,3 +4,5 @@ $pdo = new PDO(
     'root',
     '',
 );
+
+define('BASE_URL', 'http://lbd/Chatdoption/public');

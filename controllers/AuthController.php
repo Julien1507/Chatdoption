@@ -30,11 +30,11 @@ if (isset($_POST['nom'])) {
         } else {
             createUser($pdo, $nom, $prenom, $email, $mdp);
             $_SESSION['success'] = "Inscription réussie, vous pouvez vous connecter !";
-            header("Location: ../views/connexion.php");
+            header("Location: " . BASE_URL . "/views/connexion.php");
             exit;
         }
     }
 }
 
 
-require_once '../views/inscription.php';
+require_once '../public/views/inscription.php';
