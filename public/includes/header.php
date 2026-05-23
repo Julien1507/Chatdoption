@@ -43,8 +43,8 @@ require_once 'C:/wamp64/www/LBD/Chatdoption/config/db.php';?>
                 <a href="<?= BASE_URL ?>/index.php" class="btn btn-orange">Accueil</a>
                 <a href="<?= BASE_URL ?>/views/chats.php" class="btn btn-orange">Voir les chats</a>
                 <a href="<?= BASE_URL ?>/contact.php" class="btn btn-orange">Contact</a>
-                <a href="<?= BASE_URL ?>/mes_demandes.php" class="btn btn-orange">Mes demandes</a>
-                <a href="<?= BASE_URL ?>/favoris.php" class="btn btn-orange">Favoris</a>
+                <a href="<?= BASE_URL ?>/views/mesdemandes.php" class="btn btn-orange">Mes demandes</a>
+                <a href="<?= BASE_URL ?>/views/favoris.php" class="btn btn-orange">Favoris</a>
                 <div class="ms-lg-auto d-flex flex-column flex-lg-row gap-2">
                     <?php if (isset($_SESSION['user'])): ?>
                         <a href="<?= BASE_URL ?>/views/profil.php" class="btn btn-orange">Mon profil</a>
@@ -53,6 +53,10 @@ require_once 'C:/wamp64/www/LBD/Chatdoption/config/db.php';?>
                         <a href="<?= BASE_URL ?>/views/inscription.php" class="btn btn-orange">Inscription</a>
                         <a href="<?= BASE_URL ?>/views/connexion.php" class="btn btn-orange">Connexion</a>
                     <?php endif; ?>
+                            <!-- admin -->
+                    
+                        <a href="<?= BASE_URL ?>/views/admin/dashboard.php" class="btn btn-orange">Admin</a>
+                    
                 </div>
             </div>
         </div>

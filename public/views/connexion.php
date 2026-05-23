@@ -12,7 +12,7 @@
                 <?php unset($_SESSION['success']); ?>
                 <?php endif; ?>
 
-                <form method="POST" action="../controllers/connexionController.php">
+                <form method="POST" action="../../controllers/connexionController.php">
                     <div class="mb-3">
                         <label style="color: #e8722a;">Email</label>
                         <input type="email" name="email" class="form-control">

@@ -33,3 +33,35 @@ function findByEmailAndMdp($pdo, $email, $mdp) {
     }
     return false;
 }
+
+
+
+/* Dashboard */
+
+
+function getAllUsers($pdo, $recherche = null) {
+    if ($recherche) {
+        $stmt = $pdo->prepare("SELECT * FROM utilisateurs WHERE nom LIKE :r OR prenom LIKE :r OR email LIKE :r ORDER BY date_inscription DESC");
+        $stmt->execute(['r' => '%' . $recherche . '%']);
+    } else {
+        $stmt = $pdo->prepare("SELECT * FROM utilisateurs ORDER BY date_inscription DESC");
+        $stmt->execute();
+    }
+    return $stmt->fetchAll();
+}
+
+function getUserById($pdo, $id) {
+    $stmt = $pdo->prepare("SELECT * FROM utilisateurs WHERE id = :id");
+    $stmt->execute(['id' => $id]);
+    return $stmt->fetch();
+}
+
+function updateRole($pdo, $id, $role) {
+    $stmt = $pdo->prepare("UPDATE utilisateurs SET role = :role WHERE id = :id");
+    $stmt->execute(['role' => $role, 'id' => $id]);
+}
+
+function deleteUser($pdo, $id) {
+    $stmt = $pdo->prepare("DELETE FROM utilisateurs WHERE id = :id");
+    $stmt->execute(['id' => $id]);
+}

@@ -26,11 +26,8 @@ $chat = getChatById($pdo, $_GET['id']);
 
             <div class="d-flex gap-2 mt-3 flex-wrap">
                 <a href="<?= BASE_URL ?>/views/adoption.php?id=<?= $chat['id'] ?>" class="btn" style="background-color: #e8722a; color: white;">Remplir le formulaire d'adoption</a>
-                <a href="#" class="btn" style="background-color: #e8722a; color: white;">Ajouter en favoris</a>
+                <a href="http://lbd/Chatdoption/controllers/FavorisController.php?id_chat=<?= $chat['id'] ?>&action=ajouter" class="btn" style="background-color: #e8722a; color: white;">Ajouter en favoris</a>
             </div>
-        </div>
-
-    </div>
 </div>
 
 <?php require_once '../includes/footer.php'; ?>
