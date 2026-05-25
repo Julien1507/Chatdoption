@@ -5,7 +5,7 @@
         <div class="col-12 col-lg-5">
             <h2 class="text-center mb-4" style="color: #4a3728;">Inscription</h2>
             <div class="p-4" style="background-color: #4a3728; border-radius: 4px;">
-                <form method="POST" action="../controllers/AuthController.php">
+                <form method="POST" action="<?= CTRL_URL ?>/AuthController.php">
                     <div class="mb-3">
                         <label style="color: #e8722a;">Nom</label>
                         <input type="text" name="nom" class="form-control">

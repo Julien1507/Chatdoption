@@ -1,4 +1,10 @@
 <?php 
+/* verifie si une session est active avant d'en demarrer une */
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+require_once 'C:/wamp64/www/LBD/Chatdoption/config/db.php';
+
 require_once 'C:/wamp64/www/LBD/Chatdoption/config/db.php';?>
 <!DOCTYPE html>
 <html lang="fr">
