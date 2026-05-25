@@ -1,7 +1,8 @@
 <?php
 session_start();
-require_once '../config/db.php';
-require_once '../models/FavoriModel.php';
+require_once ROOT_PATH . '/config/db.php';
+require_once ROOT_PATH . '/models/UserModel.php';
+require_once ROOT_PATH . '/public/views/inscription.php';
 
 if (!isset($_SESSION['user'])) {
     header("Location: " . BASE_URL . "/views/connexion.php");
@@ -23,4 +24,4 @@ if (isset($_GET['action']) && isset($_GET['id_chat'])) {
 
 // Affichage
 $favoris = getFavoris($pdo, $id_utilisateur);
-require_once '../public/views/favoris.php';
+require_once ROOT_PATH . '/public/views/favoris.php';

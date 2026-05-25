@@ -1,6 +1,6 @@
 <?php
-require_once '../includes/header.php';
-require_once '../../config/db.php';
+require_once ROOT_PATH . '/public/includes/header.php';
+require_once ROOT_PATH . '/config/db.php';
 
 if (!isset($_SESSION['user'])) {
     header("Location: " . BASE_URL . "/views/connexion.php");
@@ -105,4 +105,4 @@ if (isset($_POST['mdp'])) {
     </div>
 </div>
 
-<?php require_once '../includes/footer.php'; ?>
+<?php require_once ROOT_PATH . '/public/includes/footer.php'; ?>

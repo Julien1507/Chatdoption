@@ -1,6 +1,7 @@
-<?php require_once 'includes/header.php';
-require_once '../config/db.php';
-require_once '../models/ChatModel.php';
+<?php 
+require_once ROOT_PATH . '/config/db.php';
+require_once ROOT_PATH . '/public/includes/header.php';
+require_once ROOT_PATH . '/models/ChatModel.php';
 $chats = getTroisChats($pdo);
 ?>
 
@@ -37,4 +38,4 @@ $chats = getTroisChats($pdo);
     </div>
 </div>
 
-<?php require_once 'includes/footer.php'; ?>
+<?php require_once ROOT_PATH . '/public/includes/footer.php';?>

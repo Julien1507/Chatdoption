@@ -1,7 +1,7 @@
 <?php 
-require_once '../includes/header.php';
-require_once '../../config/db.php';
-require_once '../../models/ChatModel.php';
+require_once ROOT_PATH . '/public/includes/header.php';
+require_once ROOT_PATH . '/config/db.php';
+require_once ROOT_PATH . '/models/ChatModel.php';
 
 $chat = getChatById($pdo, $_GET['id']);
 
@@ -26,8 +26,8 @@ $chat = getChatById($pdo, $_GET['id']);
 
             <div class="d-flex gap-2 mt-3 flex-wrap">
                 <a href="<?= BASE_URL ?>/views/adoption.php?id=<?= $chat['id'] ?>" class="btn" style="background-color: #e8722a; color: white;">Remplir le formulaire d'adoption</a>
-                <a href="http://lbd/Chatdoption/controllers/FavorisController.php?id_chat=<?= $chat['id'] ?>&action=ajouter" class="btn" style="background-color: #e8722a; color: white;">Ajouter en favoris</a>
+                <a href="<?= CTRL_URL ?>/FavorisController.php?id_chat=<?= $chat['id'] ?>&action=ajouter" class="btn" style="background-color: #e8722a; color: white;">Ajouter en favoris</a>
             </div>
 </div>
 
-<?php require_once '../includes/footer.php'; ?>
+<?php require_once ROOT_PATH . '/public/includes/footer.php'; ?>

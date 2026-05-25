@@ -1,7 +1,7 @@
 <?php 
-require_once '../includes/header.php';
-require_once '../../config/db.php';
-require_once '../../models/ChatModel.php';
+require_once ROOT_PATH . '/public/includes/header.php';
+require_once ROOT_PATH . '/config/db.php';
+require_once ROOT_PATH . '/models/ChatModel.php';
 
 $chats = getChats($pdo);
 /* si recherche effectuée, array filter parcourt le tableau chats et garde ce que l'utilisateur a saisi */
@@ -77,4 +77,4 @@ if (isset($_GET['age']) && !empty($_GET['age'])) {
     </div>
 </div>
 
-<?php require_once '../includes/footer.php'; ?>
+<?php require_once ROOT_PATH . '/public/includes/footer.php'; ?>

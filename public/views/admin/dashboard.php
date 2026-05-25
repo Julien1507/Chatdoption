@@ -1,6 +1,6 @@
 <?php
-require_once '../../includes/header.php';
-require_once '../../../config/db.php';
+require_once ROOT_PATH . '/public/includes/header.php';
+require_once ROOT_PATH . '/config/db.php';
 
 // admin ?
 /* if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
@@ -80,4 +80,4 @@ $activite = $pdo->query("
 
 </div>
 
-<?php require_once '../../includes/footer.php'; ?>
+<?php require_once ROOT_PATH . '/public/includes/footer.php'; ?>

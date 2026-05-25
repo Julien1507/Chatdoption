@@ -1,4 +1,4 @@
-<?php require_once '../includes/header.php'; ?>
+<?php require_once ROOT_PATH . '/public/includes/header.php'; ?>
 
 <div class="container my-5">
     <div class="row justify-content-center">
@@ -36,4 +36,4 @@
     </div>
 </div>
 
-<?php require_once '../includes/footer.php'; ?>
+<?php require_once ROOT_PATH . '/public/includes/footer.php'; ?>
