@@ -1,15 +1,4 @@
-<?php
-require_once '../includes/header.php';
-require_once '../../config/db.php';
-require_once 'C:/wamp64/www/LBD/Chatdoption/models/ChatModel.php';
-
-if (!isset($_SESSION['user'])) {
-    header("Location: " . BASE_URL . "/views/connexion.php");
-    exit;
-}
-
-$favoris = getFavoris($pdo, $_SESSION['user']['id']);
-?>
+<?php require_once '../includes/header.php'; ?>
 
 <div class="container my-4">
     <h2 class="text-center py-2 mb-4" style="background-color: #4a3728; color: #d4a96a; border-radius: 4px;">Mes favoris</h2>
@@ -26,7 +15,7 @@ $favoris = getFavoris($pdo, $_SESSION['user']['id']);
                     <p class="mb-0 small">Age : <?= $chat['age'] ?> ans</p>
                     <div class="d-flex gap-2 mt-2">
                         <a href="<?= BASE_URL ?>/views/ficheChat.php?id=<?= $chat['id'] ?>" class="btn btn-sm" style="background-color:#e8722a; color:white;">Voir</a>
-                        <a href="<?= BASE_URL ?>/controllers/FavoriController.php?id_chat=<?= $chat['id'] ?>&action=supprimer" class="btn btn-sm" style="background-color:#5a4a3a; color:white;">Retirer</a>
+                        <a href="<?= CTRL_URL ?>/FavoriController.php?id_chat=<?= $chat['id'] ?>&action=supprimer" class="btn btn-sm" style="background-color:#5a4a3a; color:white;" onclick="return confirm('Retirer des favoris ?')">Retirer</a>
                     </div>
                 </div>
             </div>

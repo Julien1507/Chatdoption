@@ -1,24 +1,4 @@
-<?php
-require_once '../includes/header.php';
-require_once '../../config/db.php';
-
-/* seuelment pour les utilisateurs connectés */
-if (!isset($_SESSION['user'])) {
-    header("Location: " . BASE_URL . "/views/connexion.php");
-    exit;
-}
-
-/* récupération des demandes */
-$id_utilisateur = $_SESSION['user']['id'];
-$stmt = $pdo->prepare("
-    SELECT demandes_adoption.*, chats.nom, chats.image, demandes_adoption.statut 
-    FROM demandes_adoption 
-    JOIN chats ON demandes_adoption.id_chat = chats.id 
-    WHERE demandes_adoption.id_utilisateur = :id
-");
-$stmt->execute(['id' => $id_utilisateur]);
-$demandes = $stmt->fetchAll();
-?>
+<?php require_once '../public/includes/header.php'; ?>
 
 <div class="container my-4">
     <h2 class="text-center py-2 mb-4" style="background-color: #4a3728; color: #d4a96a; border-radius: 4px;">Mes demandes d'adoption</h2>
@@ -49,4 +29,4 @@ $demandes = $stmt->fetchAll();
     <?php endif; ?>
 </div>
 
-<?php require_once '../includes/footer.php'; ?>
+<?php require_once '../public/includes/footer.php'; ?>

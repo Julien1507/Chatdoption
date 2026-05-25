@@ -1,5 +1,4 @@
 <?php 
-session_start();
 require_once 'C:/wamp64/www/LBD/Chatdoption/config/db.php';?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -43,8 +42,8 @@ require_once 'C:/wamp64/www/LBD/Chatdoption/config/db.php';?>
                 <a href="<?= BASE_URL ?>/index.php" class="btn btn-orange">Accueil</a>
                 <a href="<?= BASE_URL ?>/views/chats.php" class="btn btn-orange">Voir les chats</a>
                 <a href="<?= BASE_URL ?>/contact.php" class="btn btn-orange">Contact</a>
-                <a href="<?= BASE_URL ?>/views/mesdemandes.php" class="btn btn-orange">Mes demandes</a>
-                <a href="<?= BASE_URL ?>/views/favoris.php" class="btn btn-orange">Favoris</a>
+                <a href="<?= CTRL_URL ?>/DemandeController.php" class="btn btn-orange">Mes demandes</a>
+                <a href="<?= CTRL_URL ?>/FavoriController.php" class="btn btn-orange">Favoris</a>
                 <div class="ms-lg-auto d-flex flex-column flex-lg-row gap-2">
                     <?php if (isset($_SESSION['user'])): ?>
                         <a href="<?= BASE_URL ?>/views/profil.php" class="btn btn-orange">Mon profil</a>
@@ -55,7 +54,7 @@ require_once 'C:/wamp64/www/LBD/Chatdoption/config/db.php';?>
                     <?php endif; ?>
                             <!-- admin -->
                     
-                        <a href="<?= BASE_URL ?>/views/admin/dashboard.php" class="btn btn-orange">Admin</a>
+                        <a href="<?= CTRL_URL ?>/AdminController.php" class="btn btn-orange">Admin</a>
                     
                 </div>
             </div>
