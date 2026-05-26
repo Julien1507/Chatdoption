@@ -1,42 +1,6 @@
 <?php
 require_once 'C:/wamp64/www/LBD/Chatdoption/config/db.php';
 require_once ROOT_PATH . '/public/includes/header.php';
-
- /* Filtre */ 
-/* les % veulent dire peu importe ce qu'il y autour */
-$where = "";
-$params = [];
-if (isset($_GET['recherche']) && !empty($_GET['recherche'])) {
-    $where = "WHERE nom LIKE :recherche OR prenom LIKE :recherche OR email LIKE :recherche";
-    $params['recherche'] = '%' . $_GET['recherche'] . '%';
-}
-
-$stmt = $pdo->prepare("SELECT * FROM utilisateurs $where ORDER BY date_inscription DESC");
-$stmt->execute($params);
-$utilisateurs = $stmt->fetchAll();
-
-/* Détail utilisateur sélectionné */
-/* avec get quand on clique sur voir, l'id de l'utilisateur est affiché dans l'url et sur le tableau */
-$userDetail = null;
-if (isset($_GET['id'])) {
-    $stmt = $pdo->prepare("SELECT * FROM utilisateurs WHERE id = :id");
-    $stmt->execute(['id' => $_GET['id']]);
-    $userDetail = $stmt->fetch();
-}
-
-/* Actions */
-if (isset($_GET['action']) && isset($_GET['id'])) {
-    $id = $_GET['id'];
-    if ($_GET['action'] == 'promouvoir') {
-        $pdo->prepare("UPDATE utilisateurs SET role = 'admin' WHERE id = :id")->execute(['id' => $id]);
-    } elseif ($_GET['action'] == 'retrograder') {
-        $pdo->prepare("UPDATE utilisateurs SET role = 'utilisateur' WHERE id = :id")->execute(['id' => $id]);
-    } elseif ($_GET['action'] == 'supprimer') {
-        $pdo->prepare("DELETE FROM utilisateurs WHERE id = :id")->execute(['id' => $id]);
-    }
-    header("Location: " . BASE_URL . "/views/admin/utilisateurs.php");
-    exit;
-}
 ?>
 
 <div class="container my-4">

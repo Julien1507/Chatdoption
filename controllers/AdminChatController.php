@@ -44,4 +44,4 @@ $sexe      = isset($_GET['sexe'])      ? $_GET['sexe']      : null;
 $chats     = getAllChats($pdo, $recherche, $statut, $sexe);
 $chatDetail = isset($_GET['id']) ? getChatById($pdo, $_GET['id']) : null;
 
-require_once ROOT_PATH . '/public/views/admin/chats.php';
+require_once ROOT_PATH . '/public/views/admin/AdminChats.php';
