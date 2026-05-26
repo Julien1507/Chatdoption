@@ -68,13 +68,13 @@ $activite = $pdo->query("
     <h5 class="text-center mt-5 mb-3" style="color: #4a3728;">Accès rapide</h5>
     <div class="row justify-content-center gap-3">
         <div class="col-12 col-lg-3">
-            <a href="<?= BASE_URL ?>/views/admin/demandes.php" class="btn w-100 py-4" style="background-color: #e8722a; color: white; font-size: 1.1rem;">Gérer les demandes</a>
+            <a href="<?= CTRL_URL ?>/AdminDemandesController.php" class="btn w-100 py-4" style="background-color: #e8722a; color: white; font-size: 1.1rem;">Gérer les demandes</a>
         </div>
         <div class="col-12 col-lg-3">
-            <a href="<?= BASE_URL ?>/views/admin/chats.php" class="btn w-100 py-4" style="background-color: #e8722a; color: white; font-size: 1.1rem;">Gérer les chats</a>
+            <a href="<?= CTRL_URL ?>/AdminChatController.php" class="btn w-100 py-4" style="background-color: #e8722a; color: white; font-size: 1.1rem;">Gérer les chats</a>
         </div>
         <div class="col-12 col-lg-3">
-            <a href="<?= BASE_URL ?>/views/admin/utilisateurs.php" class="btn w-100 py-4" style="background-color: #e8722a; color: white; font-size: 1.1rem;">Gérer les utilisateurs</a>
+            <a href="<?= CTRL_URL ?>/AdminUserController.php" class="btn w-100 py-4" style="background-color: #e8722a; color: white; font-size: 1.1rem;">Gérer les utilisateurs</a>
         </div>
     </div>
 

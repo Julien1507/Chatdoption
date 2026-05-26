@@ -19,8 +19,8 @@ if (isset($_GET['action']) && isset($_GET['id'])) {
     } elseif ($_GET['action'] == 'supprimer') {
         deleteUser($pdo, $id);
     }
-    header("Location: " . BASE_URL . "/views/admin/utilisateurs.php");
+    header("Location: " . BASE_URL . "/views/admin/dashboard.php");
     exit;
 }
 
-require_once ROOT_PATH . '/public/views/admin/utilisateurs.php';
+require_once ROOT_PATH . '/public/views/admin/dashboard.php';

@@ -60,7 +60,7 @@ require_once 'C:/wamp64/www/LBD/Chatdoption/config/db.php';?>
                     <?php endif; ?>
                             <!-- admin -->
                     
-                        <a href="<?= CTRL_URL ?>/AdminController.php" class="btn btn-orange">Admin</a>
+                        <a href="<?= CTRL_URL ?>/AdminUserController.php" class="btn btn-orange">Admin</a>
                     
                 </div>
             </div>
