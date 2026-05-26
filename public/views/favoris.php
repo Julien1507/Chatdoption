@@ -1,4 +1,5 @@
-<?php require_once ROOT_PATH . '/public/includes/header.php'; ?>
+<?php 
+require_once ROOT_PATH . '/public/includes/header.php'; ?>
 
 <div class="container my-4">
     <h2 class="text-center py-2 mb-4" style="background-color: #4a3728; color: #d4a96a; border-radius: 4px;">Mes favoris</h2>

@@ -52,8 +52,8 @@ require_once 'C:/wamp64/www/LBD/Chatdoption/config/db.php';?>
                 <a href="<?= CTRL_URL ?>/FavoriController.php" class="btn btn-orange">Favoris</a>
                 <div class="ms-lg-auto d-flex flex-column flex-lg-row gap-2">
                     <?php if (isset($_SESSION['user'])): ?>
-                        <a href="<?= BASE_URL ?>/views/profil.php" class="btn btn-orange">Mon profil</a>
-                        <a href="<?= BASE_URL ?>/controllers/deconnexionController.php" class="btn btn-orange">Déconnexion</a>
+                        <a href="<?= CTRL_URL ?>/ProfilController.php" class="btn btn-orange">Mon profil</a>
+                        <a href="<?= CTRL_URL ?>/deconnexionController.php" class="btn btn-orange">Déconnexion</a>
                     <?php else: ?>
                         <a href="<?= BASE_URL ?>/views/inscription.php" class="btn btn-orange">Inscription</a>
                         <a href="<?= BASE_URL ?>/views/connexion.php" class="btn btn-orange">Connexion</a>

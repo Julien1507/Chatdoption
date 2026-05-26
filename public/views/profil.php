@@ -1,49 +1,6 @@
 <?php
+require_once 'C:/wamp64/www/LBD/Chatdoption/config/db.php';
 require_once ROOT_PATH . '/public/includes/header.php';
-require_once ROOT_PATH . '/config/db.php';
-
-if (!isset($_SESSION['user'])) {
-    header("Location: " . BASE_URL . "/views/connexion.php");
-    exit;
-}
-
-$id = $_SESSION['user']['id'];
-$stmt = $pdo->prepare("SELECT * FROM utilisateurs WHERE id = :id");
-$stmt->execute(['id' => $id]);
-$user = $stmt->fetch();
-
-$success = "";
-$error   = "";
-
-if (isset($_POST['nom'])) {
-    $nom    = $_POST['nom'];
-    $prenom = $_POST['prenom'];
-    $email  = $_POST['email'];
-
-    $stmt = $pdo->prepare("UPDATE utilisateurs SET nom = :nom, prenom = :prenom, email = :email WHERE id = :id");
-    $stmt->execute(['nom' => $nom, 'prenom' => $prenom, 'email' => $email, 'id' => $id]);
-
-    // Met à jour la session
-    $_SESSION['user']['nom']    = $nom;
-    $_SESSION['user']['prenom'] = $prenom;
-    $_SESSION['user']['email']  = $email;
-
-    $success = "Profil mis à jour !";
-}
-
-if (isset($_POST['mdp'])) {
-    $mdp        = $_POST['mdp'];
-    $mdp_confirm = $_POST['mdp_confirm'];
-
-    if ($mdp !== $mdp_confirm) {
-        $error = "Les mots de passe ne correspondent pas";
-    } else {
-        $mdpHash = password_hash($mdp, PASSWORD_DEFAULT);
-        $stmt = $pdo->prepare("UPDATE utilisateurs SET mot_de_passe = :mdp WHERE id = :id");
-        $stmt->execute(['mdp' => $mdpHash, 'id' => $id]);
-        $success = "Mot de passe mis à jour !";
-    }
-}
 ?>
 
 <div class="container my-4">

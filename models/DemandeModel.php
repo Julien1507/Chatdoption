@@ -9,3 +9,13 @@ function getDemandesByUser($pdo, $id_utilisateur) {
     $stmt->execute(['id' => $id_utilisateur]);
     return $stmt->fetchAll();
 }
+
+
+function creerDemande($pdo, $id_utilisateur, $id_chat, $message) {
+    $stmt = $pdo->prepare("INSERT INTO demandes_adoption (id_utilisateur, id_chat, message) VALUES (:id_utilisateur, :id_chat, :message)");
+    $stmt->execute([
+        'id_utilisateur' => $id_utilisateur,
+        'id_chat'        => $id_chat,
+        'message'        => $message
+    ]);
+}

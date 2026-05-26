@@ -1,8 +1,7 @@
 <?php
 session_start();
-require_once ROOT_PATH . '/config/db.php';
-require_once ROOT_PATH . '/models/UserModel.php';
-require_once ROOT_PATH . '/public/views/inscription.php';
+require_once 'C:/wamp64/www/LBD/Chatdoption/config/db.php';
+require_once ROOT_PATH . '/models/DemandeModel.php';
 
 if (!isset($_SESSION['user'])) {
     header("Location: " . BASE_URL . "/views/connexion.php");
@@ -23,12 +22,7 @@ if (isset($_POST['id_chat'])) {
                     " | Travail: " . $_POST['travail'] . 
                     " | Motivation: " . $_POST['message'];
 
-    $stmt = $pdo->prepare("INSERT INTO demandes_adoption (id_utilisateur, id_chat, message) VALUES (:id_utilisateur, :id_chat, :message)");
-    $stmt->execute([
-        'id_utilisateur' => $id_utilisateur,
-        'id_chat'        => $id_chat,
-        'message'        => $message
-    ]);
+    creerDemande($pdo, $id_utilisateur, $id_chat, $message);
 
     $_SESSION['success'] = "Votre demande d'adoption a bien été envoyée !";
     header("Location: " . BASE_URL . "/views/chats.php");

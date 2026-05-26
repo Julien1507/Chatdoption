@@ -1,6 +1,6 @@
 <?php
+require_once 'C:/wamp64/www/LBD/Chatdoption/config/db.php';
 require_once ROOT_PATH . '/public/includes/header.php';
-require_once ROOT_PATH . '/config/db.php';
 
 // admin ?
 /* if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {

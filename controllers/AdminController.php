@@ -1,9 +1,7 @@
 <?php
 session_start();
-require_once ROOT_PATH . '/config/db.php';
+require_once 'C:/wamp64/www/LBD/Chatdoption/config/db.php';
 require_once ROOT_PATH . '/models/UserModel.php';
-require_once ROOT_PATH . '/public/views/inscription.php';
-
 /* connecté ? */
 if (!isset($_SESSION['user'])) {
     header("Location: " . BASE_URL . "/views/connexion.php");
@@ -25,4 +23,4 @@ if (isset($_GET['action']) && isset($_GET['id'])) {
     exit;
 }
 
-require_once '../public/views/admin/utilisateurs.php';
+require_once ROOT_PATH . '/public/views/admin/utilisateurs.php';

@@ -1,8 +1,7 @@
 <?php
 session_start();
-require_once ROOT_PATH . '/config/db.php';
-require_once ROOT_PATH . '/models/UserModel.php';
-require_once ROOT_PATH . '/public/views/inscription.php';
+require_once 'C:/wamp64/www/LBD/Chatdoption/config/db.php';
+require_once ROOT_PATH . '/models/FavoriModel.php';
 
 if (!isset($_SESSION['user'])) {
     header("Location: " . BASE_URL . "/views/connexion.php");

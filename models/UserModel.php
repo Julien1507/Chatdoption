@@ -65,3 +65,17 @@ function deleteUser($pdo, $id) {
     $stmt = $pdo->prepare("DELETE FROM utilisateurs WHERE id = :id");
     $stmt->execute(['id' => $id]);
 }
+
+
+/* update */
+
+function updateUser($pdo, $id, $nom, $prenom, $email) {
+    $stmt = $pdo->prepare("UPDATE utilisateurs SET nom = :nom, prenom = :prenom, email = :email WHERE id = :id");
+    $stmt->execute(['nom' => $nom, 'prenom' => $prenom, 'email' => $email, 'id' => $id]);
+}
+
+function updateMdp($pdo, $id, $mdp) {
+    $mdpHash = password_hash($mdp, PASSWORD_DEFAULT);
+    $stmt = $pdo->prepare("UPDATE utilisateurs SET mot_de_passe = :mdp WHERE id = :id");
+    $stmt->execute(['mdp' => $mdpHash, 'id' => $id]);
+}
