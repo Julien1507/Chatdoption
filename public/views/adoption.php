@@ -1,11 +1,6 @@
 <?php
 require_once 'C:/wamp64/www/LBD/Chatdoption/config/db.php';
 require_once ROOT_PATH . '/public/includes/header.php';
-
-if (!isset($_SESSION['user'])) {
-    header("Location: " . BASE_URL . "/views/connexion.php");
-    exit;
-}
 ?>
 
 <div class="container my-4">

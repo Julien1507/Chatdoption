@@ -3,8 +3,6 @@
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
-require_once 'C:/wamp64/www/LBD/Chatdoption/config/db.php';
-
 require_once 'C:/wamp64/www/LBD/Chatdoption/config/db.php';?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -47,7 +45,7 @@ require_once 'C:/wamp64/www/LBD/Chatdoption/config/db.php';?>
             <div class="d-flex flex-column flex-lg-row align-items-center gap-2 w-100 mt-2 mt-lg-0">                
                 <a href="<?= BASE_URL ?>/index.php" class="btn btn-orange">Accueil</a>
                 <a href="<?= BASE_URL ?>/views/chats.php" class="btn btn-orange">Voir les chats</a>
-                <a href="<?= BASE_URL ?>/contact.php" class="btn btn-orange">Contact</a>
+                <a href="<?= BASE_URL ?>/views/contact.php" class="btn btn-orange">Contact</a>
                 <a href="<?= CTRL_URL ?>/DemandeController.php" class="btn btn-orange">Mes demandes</a>
                 <a href="<?= CTRL_URL ?>/FavoriController.php" class="btn btn-orange">Favoris</a>
                 <div class="ms-lg-auto d-flex flex-column flex-lg-row gap-2">

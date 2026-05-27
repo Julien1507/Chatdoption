@@ -28,3 +28,6 @@ if (isset($_POST['id_chat'])) {
     header("Location: " . BASE_URL . "/views/chats.php");
     exit;
 }
+
+
+require_once ROOT_PATH . '/public/views/adoption.php';
