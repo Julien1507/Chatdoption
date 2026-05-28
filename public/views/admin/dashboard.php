@@ -2,11 +2,10 @@
 require_once 'C:/wamp64/www/LBD/Chatdoption/config/db.php';
 require_once ROOT_PATH . '/public/includes/header.php';
 
-// admin ?
-/* if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
+if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
     header("Location: " . BASE_URL . "/views/connexion.php");
     exit;
-} */
+}
 
 // stats globales
 $nbUtilisateurs = $pdo->query("SELECT COUNT(*) FROM utilisateurs")->fetchColumn();

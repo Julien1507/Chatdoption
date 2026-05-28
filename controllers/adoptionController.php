@@ -4,7 +4,7 @@ require_once 'C:/wamp64/www/LBD/Chatdoption/config/db.php';
 require_once ROOT_PATH . '/models/DemandeModel.php';
 
 if (!isset($_SESSION['user'])) {
-    header("Location: " . BASE_URL . "/views/connexion.php");
+    header("Location: " . CTRL_URL . "/connexionController.php");
     exit;
 }
 
@@ -22,12 +22,16 @@ if (isset($_POST['id_chat'])) {
                     " | Travail: " . $_POST['travail'] . 
                     " | Motivation: " . $_POST['message'];
 
+/* try and catch pour gérer l'erreur adoption unique */
+try {
     creerDemande($pdo, $id_utilisateur, $id_chat, $message);
-
     $_SESSION['success'] = "Votre demande d'adoption a bien été envoyée !";
-    header("Location: " . BASE_URL . "/views/chats.php");
-    exit;
+} catch (PDOException $e) {
+    $_SESSION['error'] = "Vous avez déjà fait une demande pour ce chat !";
 }
 
+header("Location: " . CTRL_URL . "/ChatController.php");
+exit;
+}
 
 require_once ROOT_PATH . '/public/views/adoption.php';

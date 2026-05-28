@@ -2,7 +2,7 @@
 
 <div class="container my-4">
     <h2 class="text-center py-2 mb-4" style="background-color: #4a3728; color: #d4a96a; border-radius: 4px;">Gestion des demandes</h2>
-
+    <a href="<?= BASE_URL ?>/views/admin/dashboard.php" class="btn mb-3" style="background-color:#4a3728; color:#d4a96a;">← Dashboard</a>
     <div class="row">
         <!-- Gauche -->
         <div class="col-12 col-lg-7">

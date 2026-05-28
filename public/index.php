@@ -19,6 +19,11 @@ $chats = getTroisChats($pdo);
     <p class="small">Les chatons, c'est drôle et amusant mais c'est aussi très remuant et peut-être parfois aussi très énervant. Pensez-y si vous cherchez un chat doux, calme et câlin - les chats plus âgés répondent mieux à ces conditions et ils méritent tout votre amour. Tous nos chatons ne partent que s'ils sont pré-vaccinés, stérilisés et identifiés, conformément à la loi.</p>
 </div>
 
+<div class="text-center my-4">
+    <a href="<?= CTRL_URL ?>/ChatController.php" class="btn px-5 py-3" style="background-color: #e8722a; color: white; font-size: 1.1rem; border-radius: 50px;">
+        🐾 Voir tous nos chats
+    </a>
+</div>
 
 <div class="container my-4">
     <h2 class="text-center py-2 mb-4" style="background-color: #4a3728; color: #d4a96a; border-radius: 4px;">Chats du jour</h2>

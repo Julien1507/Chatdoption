@@ -14,7 +14,7 @@ require_once ROOT_PATH . '/public/includes/header.php'; ?>
                 <?php unset($_SESSION['success']); ?>
                 <?php endif; ?>
 
-                <form method="POST" action="../../controllers/connexionController.php">
+                <form method="POST" action="<?= CTRL_URL ?>/ConnexionController.php">
                     <div class="mb-3">
                         <label style="color: #e8722a;">Email</label>
                         <input type="email" name="email" class="form-control">
@@ -23,6 +23,8 @@ require_once ROOT_PATH . '/public/includes/header.php'; ?>
                     <div class="mb-3">
                         <label style="color: #e8722a;">Mot de passe</label>
                         <input type="password" name="mdp" class="form-control">
+                        <input type="checkbox" name="ShowPassword" id="showPassword" class="form-check-input mt-2">
+                        <label for="showPassword" style="color: #d4a96a;" class="form-check-label mt-2">Afficher le mot de passe</label>
                     </div>
 
                     <?php if (!empty($error)): ?>
@@ -38,4 +40,17 @@ require_once ROOT_PATH . '/public/includes/header.php'; ?>
     </div>
 </div>
 
+<!-- montrer mdp -->
+<script>
+    const showPasswordCheckbox = document.getElementById('showPassword');
+    const passwordInput = document.querySelector('input[name="mdp"]');
+
+    showPasswordCheckbox.addEventListener('change', function() {
+        if (this.checked) {
+            passwordInput.type = 'text';
+        } else {
+            passwordInput.type = 'password';
+        }
+    });
+</script>
 <?php require_once ROOT_PATH . '/public/includes/footer.php'; ?>

@@ -1,31 +1,17 @@
 <?php 
-require_once 'C:/wamp64/www/LBD/Chatdoption/config/db.php';
 require_once ROOT_PATH . '/public/includes/header.php';
-require_once ROOT_PATH . '/models/ChatModel.php';
-
-$chats = getChats($pdo);
-/* si recherche effectuée, array filter parcourt le tableau chats et garde ce que l'utilisateur a saisi */
-if (isset($_GET['recherche']) && !empty($_GET['recherche'])) {
-    $recherche = $_GET['recherche'];
-    $chats = array_filter($chats, function($chat) use ($recherche) {
-        return stripos($chat['nom'], $recherche) !== false;
-    });
-}
-
-if (isset($_GET['sexe']) && !empty($_GET['sexe'])) {
-    $sexe = $_GET['sexe'];
-    $chats = array_filter($chats, function($chat) use ($sexe) {
-        return $chat['sexe'] == $sexe;
-    });
-}
-
-if (isset($_GET['age']) && !empty($_GET['age'])) {
-    $chats = array_filter($chats, function($chat) {
-        if ($_GET['age'] == 'chaton') return $chat['age'] < 1;
-        if ($_GET['age'] == 'adulte') return $chat['age'] >= 1;
-    });
-}
 ?>
+
+<?php if (isset($_SESSION['error'])): ?>
+    <div class="container mt-3">
+        <p class="text-center p-2" style="background-color: #ff6b6b; color: white; border-radius: 4px;">
+            <?= $_SESSION['error'] ?>
+        </p>
+    </div>
+    <?php unset($_SESSION['error']); ?>
+<?php endif; ?>
+
+
 
 <div class="container my-4">
     <h2 class="text-center py-2 mb-4" style="background-color: #4a3728; color: #d4a96a; border-radius: 4px;">Nos chats prêts à l'adoption</h2>

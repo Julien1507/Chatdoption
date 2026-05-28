@@ -39,4 +39,4 @@ if (isset($_POST['nom'])) {
 }
 
 
-require_once '../public/views/inscription.php';
+require_once ROOT_PATH . '/public/views/inscription.php';

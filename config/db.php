@@ -5,8 +5,12 @@ $pdo = new PDO(
     '',
 );
 
-define('BASE_URL', 'http://lbd/Chatdoption/public');
-define('CTRL_URL', 'http://lbd/Chatdoption/controllers');
+// Chemin absolu vers la racine du projet (fonctionne sur toutes les machines)
+define('ROOT_PATH', dirname(__DIR__));
 
-
-define('ROOT_PATH', 'C:/wamp64/www/LBD/Chatdoption');
+// URL de base dynamique (fonctionne sur tous les serveurs)
+$protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http';
+$host     = $_SERVER['HTTP_HOST'];
+$base     = rtrim(dirname(dirname($_SERVER['SCRIPT_NAME'])), '/');
+define('BASE_URL', $protocol . '://' . $host . $base . '/public');
+define('CTRL_URL', $protocol . '://' . $host . $base . '/controllers');

@@ -3,7 +3,8 @@ session_start();
 require_once 'C:/wamp64/www/LBD/Chatdoption/config/db.php';
 require_once ROOT_PATH . '/models/ChatModel.php';
 
-if (!isset($_SESSION['user'])) {
+/* redirige si pas admin */
+if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
     header("Location: " . BASE_URL . "/views/connexion.php");
     exit;
 }

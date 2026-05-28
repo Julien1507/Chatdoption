@@ -28,4 +28,4 @@ if (isset($_POST['email'])) {
     }
 }
 
-require_once '../public/views/connexion.php';
+require_once ROOT_PATH . '/public/views/connexion.php';

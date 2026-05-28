@@ -22,15 +22,15 @@ require_once ROOT_PATH . '/public/includes/header.php';
                 <form method="POST" action="">
                     <div class="mb-3">
                         <label>Nom</label>
-                        <input type="text" name="nom" class="form-control" value="<?= $user['nom'] ?>">
+                        <input type="text" name="nom" class="form-control" value="<?= htmlspecialchars($user['nom']) ?>">
                     </div>
                     <div class="mb-3">
                         <label>Prénom</label>
-                        <input type="text" name="prenom" class="form-control" value="<?= $user['prenom'] ?>">
+                        <input type="text" name="prenom" class="form-control" value="<?= htmlspecialchars($user['prenom']) ?>">
                     </div>
                     <div class="mb-3">
                         <label>Email</label>
-                        <input type="email" name="email" class="form-control" value="<?= $user['email'] ?>">
+                        <input type="email" name="email" class="form-control" value="<?= htmlspecialchars($user['email']) ?>">
                     </div>
                     <div class="text-center">
                         <button type="submit" class="btn" style="background-color:#e8722a; color:white;">Mettre à jour</button>
@@ -46,11 +46,13 @@ require_once ROOT_PATH . '/public/includes/header.php';
                 <form method="POST" action="">
                     <div class="mb-3">
                         <label>Nouveau mot de passe</label>
-                        <input type="password" name="mdp" class="form-control">
+                        <input type="password" name="mdp" class="form-control password-input">
                     </div>
                     <div class="mb-3">
                         <label>Confirmer le mot de passe</label>
-                        <input type="password" name="mdp_confirm" class="form-control">
+                        <input type="password" name="mdp_confirm" class="form-control password-input">
+                        <input type="checkbox" name="ShowPassword" id="showPassword" class="form-check-input mt-2">
+                        <label for="showPassword" style="color: #d4a96a;" class="form-check-label mt-2">Afficher le mot de passe</label>
                     </div>
                     <div class="text-center">
                         <button type="submit" class="btn" style="background-color:#e8722a; color:white;">Changer</button>
@@ -61,5 +63,15 @@ require_once ROOT_PATH . '/public/includes/header.php';
 
     </div>
 </div>
+<!-- montrer mdp, boucle foreach pour que ça montre les2 -->
+<script>
+    const showPasswordCheckbox = document.getElementById('showPassword');
+    const passwordInputs = document.querySelectorAll('.password-input');
 
+    showPasswordCheckbox.addEventListener('change', function() {
+        passwordInputs.forEach(input => {
+            input.type = this.checked ? 'text' : 'password';
+        });
+    });
+</script>
 <?php require_once ROOT_PATH . '/public/includes/footer.php'; ?>
