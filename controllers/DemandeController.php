@@ -5,7 +5,7 @@ require_once ROOT_PATH . '/models/DemandeModel.php';
 
 
 if (!isset($_SESSION['user'])) {
-    header("Location: " . BASE_URL . "/views/connexion.php");
+    header("Location: " . BASE_URL . "?url=connexion");
     exit;
 }
 

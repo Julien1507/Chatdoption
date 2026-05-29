@@ -1,8 +1,8 @@
 <?php 
 /* verifie si une session est active avant d'en demarrer une */
-if (session_status() === PHP_SESSION_NONE) {
+/* if (session_status() === PHP_SESSION_NONE) {
     session_start();
-}
+} */
 require_once __DIR__ . '/../../config/db.php';?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -52,15 +52,15 @@ require_once __DIR__ . '/../../config/db.php';?>
 
                 <!-- log -->
                 <?php if (isset($_SESSION['user'])): ?>
-                    <a href="<?= BASE_URL ?>?url=profil">Mon profil</a>
-                    <a href="<?= BASE_URL ?>?url=deconnexion">Déconnexion</a>
+                    <a href="<?= BASE_URL ?>?url=profil" class="btn btn-orange">Mon profil</a>
+                    <a href="<?= BASE_URL ?>?url=deconnexion" class="btn btn-orange">Déconnexion</a>
                 <?php else: ?>
-                    <a href="<?= BASE_URL ?>?url=inscription">Inscription</a>
-                    <a href="<?= BASE_URL ?>?url=connexion">Connexion</a>
+                    <a href="<?= BASE_URL ?>?url=inscription" class="btn btn-orange">Inscription</a>
+                    <a href="<?= BASE_URL ?>?url=connexion" class="btn btn-orange">Connexion</a>
                 <?php endif; ?>
                 <!-- admin -->
                 <?php if (isset($_SESSION['user']) && $_SESSION['user']['role'] === 'admin'): ?>
-                    <a href="<?= BASE_URL ?>?url=admin">Admin</a>
+                    <a href="<?= BASE_URL ?>?url=admin" class="btn btn-orange">Admin</a>
                 <?php endif; ?>
                     
                 </div>

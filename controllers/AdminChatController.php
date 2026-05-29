@@ -1,11 +1,11 @@
 <?php
-session_start();
+
 require_once __DIR__ . '/../config/db.php';
 require_once ROOT_PATH . '/models/ChatModel.php';
 
 /* redirige si pas admin */
 if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
-    header("Location: " . BASE_URL . "/views/connexion.php");
+    header("Location: " . BASE_URL . "?url=connexion");
     exit;
 }
 
@@ -14,12 +14,12 @@ if (isset($_GET['action']) && isset($_GET['id'])) {
     $id = $_GET['id'];
     if ($_GET['action'] == 'supprimer') {
         deleteChat($pdo, $id);
-        header("Location: " . CTRL_URL . "/AdminChatController.php");
+        header("Location: " . BASE_URL . "?url=admin");
         exit;
     }
     if ($_GET['action'] == 'statut') {
         updateStatut($pdo, $id, $_GET['statut']);
-        header("Location: " . CTRL_URL . "/AdminChatController.php");
+        header("Location: " . BASE_URL . "?url=admin/chats");
         exit;
     }
 }
@@ -27,14 +27,14 @@ if (isset($_GET['action']) && isset($_GET['id'])) {
 // Modifier
 if (isset($_POST['modifier'])) {
     updateChat($pdo, $_POST['id'], $_POST['nom'], $_POST['age'], $_POST['sexe'], $_POST['race'], $_POST['description'], $_POST['image']);
-    header("Location: " . CTRL_URL . "/AdminChatController.php");
+    header("Location: " . BASE_URL . "?url=admin/chats");
     exit;
 }
 
 // Ajouter
 if (isset($_POST['ajouter'])) {
     addChat($pdo, $_POST['nom'], $_POST['age'], $_POST['sexe'], $_POST['race'], $_POST['description'], $_POST['statut'], $_POST['date_arrivee'], $_POST['image']);
-    header("Location: " . CTRL_URL . "/AdminChatController.php");
+    header("Location: " . BASE_URL . "?url=admin/chats");
     exit;
 }
 

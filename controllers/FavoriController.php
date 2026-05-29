@@ -4,7 +4,7 @@ require_once __DIR__ . '/../config/db.php';
 require_once ROOT_PATH . '/models/FavoriModel.php';
 
 if (!isset($_SESSION['user'])) {
-    header("Location: " . BASE_URL . "/views/connexion.php");
+    header("Location: " . BASE_URL . "?url=connexion");
     exit;
 }
 
@@ -17,7 +17,7 @@ if (isset($_GET['action']) && isset($_GET['id_chat'])) {
     } elseif ($_GET['action'] == 'supprimer') {
         supprimerFavori($pdo, $id_utilisateur, $_GET['id_chat']);
     }
-    header("Location: " . CTRL_URL . "/FavoriController.php");
+    header("Location: " . BASE_URL . "?url=favoris");
     exit;
 }
 
