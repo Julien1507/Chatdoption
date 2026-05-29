@@ -14,7 +14,7 @@ require_once ROOT_PATH . '/public/includes/header.php'; ?>
                 <?php unset($_SESSION['success']); ?>
                 <?php endif; ?>
 
-                <form method="POST" action="<?= CTRL_URL ?>/ConnexionController.php">
+                <form method="POST" action="<?= BASE_URL ?>?url=connexion">
                     <div class="mb-3">
                         <label style="color: #e8722a;">Email</label>
                         <input type="email" name="email" class="form-control">

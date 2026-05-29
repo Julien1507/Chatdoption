@@ -18,7 +18,7 @@ require_once ROOT_PATH . '/public/includes/header.php';
                     <div class="barre" id="b4" style="height:4px; flex:1; background:#5a4a3a; border-radius:4px;"></div>
                 </div>
 
-                <form method="POST" action="<?= CTRL_URL ?>/AdoptionController.php">
+                <form method="POST" action="<?= BASE_URL ?>?url=adoption">
                     <input type="hidden" name="id_chat" value="<?= isset($_GET['id']) ? $_GET['id'] : '' ?>">
 
                     <!-- ÉTAPE 1 : Situation -->

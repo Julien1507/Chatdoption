@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/../../config/db.php';;
+require_once __DIR__ . '/../../../config/db.php';
 require_once ROOT_PATH . '/public/includes/header.php';
 
 if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
@@ -67,13 +67,13 @@ $activite = $pdo->query("
     <h5 class="text-center mt-5 mb-3" style="color: #4a3728;">Accès rapide</h5>
     <div class="row justify-content-center gap-3">
         <div class="col-12 col-lg-3">
-            <a href="<?= CTRL_URL ?>/AdminDemandesController.php" class="btn w-100 py-4" style="background-color: #e8722a; color: white; font-size: 1.1rem;">Gérer les demandes</a>
+            <a href="<?= BASE_URL ?>?url=admin/demandes" class="btn w-100 py-4" style="background-color: #e8722a; color: white; font-size: 1.1rem;">Gérer les demandes</a>
         </div>
         <div class="col-12 col-lg-3">
-            <a href="<?= CTRL_URL ?>/AdminChatController.php" class="btn w-100 py-4" style="background-color: #e8722a; color: white; font-size: 1.1rem;">Gérer les chats</a>
+            <a href="<?= BASE_URL ?>?url=admin/chats" class="btn w-100 py-4" style="background-color: #e8722a; color: white; font-size: 1.1rem;">Gérer les chats</a>
         </div>
         <div class="col-12 col-lg-3">
-            <a href="<?= CTRL_URL ?>/AdminUserController.php" class="btn w-100 py-4" style="background-color: #e8722a; color: white; font-size: 1.1rem;">Gérer les utilisateurs</a>
+            <a href="<?= BASE_URL ?>?url=admin/users" class="btn w-100 py-4" style="background-color: #e8722a; color: white; font-size: 1.1rem;">Gérer les utilisateurs</a>
         </div>
     </div>
 
