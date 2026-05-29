@@ -1,5 +1,5 @@
 <?php 
-require_once 'C:/wamp64/www/LBD/Chatdoption/public/includes/header.php'; ?>
+require_once __DIR__ . '/../includes/header.php'; ?>
 
 <div class="container my-5">
     <div class="row justify-content-center">

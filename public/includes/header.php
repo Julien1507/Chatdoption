@@ -43,27 +43,25 @@ require_once __DIR__ . '/../../config/db.php';?>
 
         <div class="collapse navbar-collapse" id="navMenu">
             <div class="d-flex flex-column flex-lg-row align-items-center gap-2 w-100 mt-2 mt-lg-0">                
-                <a href="<?= BASE_URL ?>/index.php" class="btn btn-orange">Accueil</a>
-                <a href="<?= CTRL_URL ?>/ChatController.php" class="btn btn-orange">Voir les chats</a>
-                <a href="<?= BASE_URL ?>/views/contact.php" class="btn btn-orange">Contact</a>
-                <a href="<?= CTRL_URL ?>/DemandeController.php" class="btn btn-orange">Mes demandes</a>
-                <a href="<?= CTRL_URL ?>/FavoriController.php" class="btn btn-orange">Favoris</a>
+                <a href="<?= BASE_URL ?>?url=accueil">Accueil</a>
+                <a href="<?= BASE_URL ?>?url=chats">Voir les chats</a>
+                <a href="<?= BASE_URL ?>?url=contact">Contact</a>
+                <a href="<?= BASE_URL ?>?url=demandes">Mes demandes</a>
+                <a href="<?= BASE_URL ?>?url=favoris">Favoris</a>
                 <div class="ms-lg-auto d-flex flex-column flex-lg-row gap-2">
 
                 <!-- log -->
-                    <?php if (isset($_SESSION['user'])): ?>
-                        <a href="<?= CTRL_URL ?>/ProfilController.php" class="btn btn-orange">Mon profil</a>
-                        <a href="<?= CTRL_URL ?>/deconnexionController.php" class="btn btn-orange">Déconnexion</a>
-                    <?php else: ?>
-                        <a href="<?= CTRL_URL ?>/AuthController.php" class="btn btn-orange">Inscription</a>
-                        <a href="<?= CTRL_URL ?>/ConnexionController.php" class="btn btn-orange">Connexion</a>
-                    <?php endif; ?>
-
-                        <!-- admin -->
-                    
-                        <?php if (isset($_SESSION['user']) && $_SESSION['user']['role'] === 'admin'): ?>
-                            <a href="<?= BASE_URL ?>/views/admin/dashboard.php" class="btn btn-orange">Admin</a>
-                        <?php endif; ?>
+                <?php if (isset($_SESSION['user'])): ?>
+                    <a href="<?= BASE_URL ?>?url=profil">Mon profil</a>
+                    <a href="<?= BASE_URL ?>?url=deconnexion">Déconnexion</a>
+                <?php else: ?>
+                    <a href="<?= BASE_URL ?>?url=inscription">Inscription</a>
+                    <a href="<?= BASE_URL ?>?url=connexion">Connexion</a>
+                <?php endif; ?>
+                <!-- admin -->
+                <?php if (isset($_SESSION['user']) && $_SESSION['user']['role'] === 'admin'): ?>
+                    <a href="<?= BASE_URL ?>?url=admin">Admin</a>
+                <?php endif; ?>
                     
                 </div>
             </div>
