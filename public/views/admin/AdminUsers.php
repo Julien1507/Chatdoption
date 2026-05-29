@@ -4,7 +4,7 @@ require_once ROOT_PATH . '/public/includes/header.php';
 
 <div class="container my-4">
     <h2 class="text-center py-2 mb-4" style="background-color: #e8722a; color: white; border-radius: 4px;">Gestion des utilisateurs</h2>
-    <a href="<?= BASE_URL ?>/views/admin/dashboard.php" class="btn mb-3" style="background-color:#4a3728; color:#d4a96a;">← Dashboard</a>
+    <a href="<?= BASE_URL ?>?url=admin" class="btn mb-3" style="background-color:#4a3728; color:#d4a96a;">← Dashboard</a>
     <div class="row">
 
         <!-- Gauche : filtre + tableau -->
@@ -44,7 +44,7 @@ require_once ROOT_PATH . '/public/includes/header.php';
                         <td><?= $u['role'] ?></td>
                         <td><?= date('d/m/Y', strtotime($u['date_inscription'])) ?></td>
                         <td>
-                            <a href="?id=<?= $u['id'] ?>" class="btn btn-sm" style="background-color:#4a3728; color:#d4a96a;">Voir</a>
+                            <a href="<?= BASE_URL ?>?url=admin/users&id=<?= $u['id'] ?>" class="btn btn-sm" style="background-color:#4a3728; color:#d4a96a;">Voir</a>
                         </td>
                     </tr>
                     <?php endforeach; ?>
@@ -69,9 +69,9 @@ require_once ROOT_PATH . '/public/includes/header.php';
 
             <?php if ($userDetail): ?>
             <div class="d-flex gap-2 flex-wrap">
-                <a href="?id=<?= $userDetail['id'] ?>&action=promouvoir" class="btn" style="background-color:#e8722a; color:white;">Promouvoir admin</a>
-                <a href="?id=<?= $userDetail['id'] ?>&action=retrograder" class="btn" style="background-color:#e8722a; color:white;">Rétrograder</a>
-                <a href="?id=<?= $userDetail['id'] ?>&action=supprimer" class="btn" style="background-color:#e8722a; color:white;" onclick="return confirm('Supprimer cet utilisateur ?')">Supprimer</a>
+                <a href="<?= BASE_URL ?>?url=admin/users&id=<?= $userDetail['id'] ?>&action=promouvoir" class="btn" style="background-color:#e8722a; color:white;">Promouvoir admin</a>
+                <a href="<?= BASE_URL ?>?url=admin/users&id=<?= $userDetail['id'] ?>&action=retrograder" class="btn" style="background-color:#e8722a; color:white;">Rétrograder</a>
+                <a href="<?= BASE_URL ?>?url=admin/users&id=<?= $userDetail['id'] ?>&action=supprimer" class="btn" style="background-color:#e8722a; color:white;" onclick="return confirm('Supprimer cet utilisateur ?')">Supprimer</a>
             </div>
             <?php endif; ?>
         </div>

@@ -30,7 +30,7 @@ try {
     $_SESSION['error'] = "Vous avez déjà fait une demande pour ce chat !";
 }
 
-header("Location: " . BASE_URL . "?url=chat");
+header("Location: " . BASE_URL . "?url=chats");
 exit;
 }
 

@@ -21,7 +21,7 @@ if (isset($_POST['email'])) {
             'email' => $user['email'],
             'role'  => $user['role']
         ];
-        header("Location: " . BASE_URL . "/index.php");
+        header("Location: " . BASE_URL . "?url=accueil");
         exit;
     } else {
         $error = "Email ou mot de passe incorrect";

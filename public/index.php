@@ -47,6 +47,9 @@ switch ($url) {
     case 'admin/users':
         require_once ROOT_PATH . '/controllers/AdminUserController.php';
         break;
+    case 'ficheChat':
+        require_once ROOT_PATH . '/public/views/ficheChat.php';
+        break;
     default:
         http_response_code(404);
         echo '<h1>404 - Page introuvable</h1>';

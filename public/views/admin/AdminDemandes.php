@@ -2,7 +2,7 @@
 
 <div class="container my-4">
     <h2 class="text-center py-2 mb-4" style="background-color: #4a3728; color: #d4a96a; border-radius: 4px;">Gestion des demandes</h2>
-    <a href="<?= BASE_URL ?>/views/admin/dashboard.php" class="btn mb-3" style="background-color:#4a3728; color:#d4a96a;">← Dashboard</a>
+    <a href="<?= BASE_URL ?>?url=admin" class="btn mb-3" style="background-color:#4a3728; color:#d4a96a;">← Dashboard</a>
     <div class="row">
         <!-- Gauche -->
         <div class="col-12 col-lg-7">
@@ -58,7 +58,7 @@
                                 <span style="color:#f44336;">Refusé</span>
                             <?php endif; ?>
                         </td>
-                        <td><a href="?id=<?= $d['id'] ?>" class="btn btn-sm" style="background-color:#4a3728; color:#d4a96a;">Voir</a></td>
+                        <td><a href="<?= BASE_URL ?>?url=admin/demandes&id=<?= $d['id'] ?>" class="btn btn-sm" style="background-color:#4a3728; color:#d4a96a;">Voir</a></td>
                     </tr>
                     <?php endforeach; ?>
                 </tbody>
@@ -90,8 +90,8 @@
             </div>
 
             <div class="d-flex gap-2">
-                <a href="?id=<?= $demandeDetail['id'] ?>&action=accepter" class="btn w-100" style="background-color:#e8722a; color:white;" onclick="return confirm('Accepter cette demande ?')">Accepter</a>
-                <a href="?id=<?= $demandeDetail['id'] ?>&action=refuser" class="btn w-100" style="background-color:#4a3728; color:#d4a96a;" onclick="return confirm('Refuser cette demande ?')">Refuser</a>
+                <a href="<?= BASE_URL ?>?url=admin/demandes&id=<?= $demandeDetail['id'] ?>&action=accepter" class="btn w-100" style="background-color:#e8722a; color:white;" onclick="return confirm('Accepter cette demande ?')">Accepter</a>
+                <a href="<?= BASE_URL ?>?url=admin/demandes&id=<?= $demandeDetail['id'] ?>&action=refuser" class="btn w-100" style="background-color:#4a3728; color:#d4a96a;" onclick="return confirm('Refuser cette demande ?')">Refuser</a>
             </div>
 
             <?php else: ?>

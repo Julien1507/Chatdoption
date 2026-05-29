@@ -47,7 +47,7 @@ require_once ROOT_PATH . '/public/includes/header.php';
     <div class="row" id="listechats">
         <?php foreach($chats as $chat): ?>
         <div class="col-12 col-lg-4 mb-3 d-flex chat-card">
-            <a href="<?= BASE_URL ?>/views/ficheChat.php?id=<?= $chat['id'] ?>" class="w-100 text-decoration-none">
+            <a href="<?= BASE_URL ?>?url=ficheChat&id=<?= $chat['id'] ?>" class="w-100 text-decoration-none">
             <div class="border p-2 w-100" style="background-color: #3a2a1a; color: #d4a96a; border-radius: 4px;">
                 <div class="border p-2 w-100" style="background-color: #3a2a1a; color: #d4a96a; border-radius: 4px;">
                     <img src="<?= BASE_URL ?>/images/<?= $chat['image'] ?>" alt="<?= $chat['nom'] ?>" style="width:100%; height: 180px; object-fit: cover;">

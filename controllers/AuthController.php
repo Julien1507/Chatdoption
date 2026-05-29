@@ -32,7 +32,7 @@ if (isset($_POST['nom'])) {
         } else {
             createUser($pdo, $nom, $prenom, $email, $mdp);
             $_SESSION['success'] = "Inscription réussie, vous pouvez vous connecter !";
-            header("Location: " . BASE_URL . "/views/connexion.php");
+            header("Location: " . BASE_URL . "?url=connexion");
             exit;
         }
     }
