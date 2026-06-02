@@ -43,11 +43,11 @@ require_once __DIR__ . '/../../config/db.php';?>
 
         <div class="collapse navbar-collapse" id="navMenu">
             <div class="d-flex flex-column flex-lg-row align-items-center gap-2 w-100 mt-2 mt-lg-0">                
-                <a href="<?= BASE_URL ?>?url=accueil">Accueil</a>
-                <a href="<?= BASE_URL ?>?url=chats">Voir les chats</a>
-                <a href="<?= BASE_URL ?>?url=contact">Contact</a>
-                <a href="<?= BASE_URL ?>?url=demandes">Mes demandes</a>
-                <a href="<?= BASE_URL ?>?url=favoris">Favoris</a>
+                <a href="<?= BASE_URL ?>?url=accueil" class="btn btn-orange">Accueil</a>
+                <a href="<?= BASE_URL ?>?url=chats" class="btn btn-orange">Voir les chats</a>
+                <a href="<?= BASE_URL ?>?url=contact" class="btn btn-orange">Contact</a>
+                <a href="<?= BASE_URL ?>?url=demandes" class="btn btn-orange">Mes demandes</a>
+                <a href="<?= BASE_URL ?>?url=favoris" class="btn btn-orange">Favoris</a>
                 <div class="ms-lg-auto d-flex flex-column flex-lg-row gap-2">
 
                 <!-- log -->
