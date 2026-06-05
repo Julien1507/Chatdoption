@@ -10,7 +10,7 @@ require_once ROOT_PATH . '/public/includes/header.php'; ?>
 
             <!-- Ajouter un chat -->
             <h5 class="text-center mb-3" style="color: #4a3728;">Ajouter un chat</h5>
-            <form method="POST" action="<?= BASE_URL ?>?url=admin/chats">
+            <form method="POST" action="<?= BASE_URL ?>?url=admin/chats">    
                 <table class="table table-bordered text-center small mb-4">
                     <thead style="background-color: #4a3728; color: #d4a96a;">
                         <tr><th>Nom</th><th>Âge</th><th>Sexe</th><th>Date arrivée</th><th>Description</th><th>Action</th></tr>
@@ -41,6 +41,8 @@ require_once ROOT_PATH . '/public/includes/header.php'; ?>
             <!-- Filtres -->
             <h5 class="text-center mb-3" style="color: #4a3728;">Filtres</h5>
             <form method="GET" action="<?= BASE_URL ?>?url=admin/chats">
+                <input type="hidden" name="url" value="admin/chats">
+
                 <div class="p-3 mb-4" style="background-color: #4a3728; border-radius: 4px;">
                     <div class="row g-2">
                         <div class="col-12 d-flex align-items-center gap-2">
@@ -113,7 +115,7 @@ require_once ROOT_PATH . '/public/includes/header.php'; ?>
                 <!-- Supprimer -->
                 <a href="<?= BASE_URL ?>?url=admin/chats&id=<?= $chatDetail['id'] ?>&action=supprimer" class="btn" style="background-color:#e8722a; color:white;" onclick="return confirm('Supprimer ?')">Supprimer</a>
                 <!-- Changer statut -->
-                <a href="<?= BASE_URL ?>?url=admin/chats&id=<?= $chatDetail['id'] ?>&action=statut&statut=...">" class="btn" style="background-color:#e8722a; color:white;">
+                <a href="<?= BASE_URL ?>?url=admin/chats&id=<?= $chatDetail['id'] ?>&action=statut&statut=..." class="btn" style="background-color:#e8722a; color:white;">
                     <?= $chatDetail['statut'] == 'disponible' ? 'Marquer adopté' : 'Marquer disponible' ?>
                 </a>
             </div>

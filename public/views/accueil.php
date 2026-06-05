@@ -9,7 +9,6 @@
 
 <div class="container my-4 text-center" style="color: #4a3728;">
     <p><strong>Avant d'adopter un chaton, prenez le temps de la réflexion !</strong></p>
-    <p class="small">Les chatons, c'est drôle et amusant...</p>
 </div>
 
 <div class="text-center my-4">
@@ -23,7 +22,7 @@
     <div class="row align-items-stretch">
         <?php foreach($chats as $chat): ?>
         <div class="col-12 col-lg-4 mb-3 d-flex">
-            <div class="border p-2" style="background-color: #3a2a1a; color: #d4a96a; border-radius: 4px; width: 100%;">
+            <div href="<?= BASE_URL ?>?url=chats&id=<?= $chat['id'] ?>" class="border p-2" style="background-color: #3a2a1a; color: #d4a96a; border-radius: 4px; width: 100%;">
                 <img src="<?= BASE_URL ?>images/<?= $chat['image'] ?>" style="width:100%; height: 180px; object-fit: cover;">
                 <p class="mt-2 mb-0 small">Nom : <?= $chat['nom'] ?></p>
                 <p class="mb-0 small">Age : <?= $chat['age'] ?> ans</p>

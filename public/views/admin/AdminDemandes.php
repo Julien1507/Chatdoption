@@ -9,7 +9,8 @@
 
             <!-- Filtres -->
             <h5 class="text-center mb-3" style="color: #4a3728;">Filtres</h5>
-            <form method="GET" action="">
+            <form method="GET" action="<?= BASE_URL ?>?url=admin/demandes">
+                <input type="hidden" name="url" value="admin/demandes">
                 <div class="p-3 mb-4" style="background-color: #4a3728; border-radius: 4px;">
                     <div class="row g-2">
                         <div class="col-12 d-flex align-items-center gap-2">

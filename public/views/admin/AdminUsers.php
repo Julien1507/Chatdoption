@@ -12,7 +12,8 @@ require_once ROOT_PATH . '/public/includes/header.php';
 
             <!-- Filtre -->
             <h5 class="text-center mb-3" style="color: #4a3728;">Filtres</h5>
-            <form method="GET" action="">
+            <form method="GET" action="<?= BASE_URL ?>?url=admin/users">
+                <input type="hidden" name="url" value="admin/users">
                 <div class="p-3 mb-4" style="background-color: #4a3728; border-radius: 4px;">
                     <div class="d-flex align-items-center gap-3">
                         <label style="color: #e8722a; white-space:nowrap;">Recherche</label>

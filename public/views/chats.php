@@ -17,8 +17,9 @@ require_once ROOT_PATH . '/public/includes/header.php';
     <h2 class="text-center py-2 mb-4" style="background-color: #4a3728; color: #d4a96a; border-radius: 4px;">Nos chats prêts à l'adoption</h2>
 
 
-
-<form method="GET" action="">
+<!-- filtre -->
+<form method="GET" action="<?= BASE_URL ?>?url=chats">
+    <input type="hidden" name="url" value="chats">
     <div class="row g-2 mb-4">
         <div class="col-12 col-lg-5">
             <input type="text" name="recherche" class="form-control" placeholder="🔍 Rechercher un chat..." style="border-radius: 50px; border: 2px solid #4a3728;" value="<?= isset($_GET['recherche']) ? $_GET['recherche'] : '' ?>">

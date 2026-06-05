@@ -24,9 +24,10 @@
             
             <div class="col-3">
                 <h6 class="fw-bold">Découvrir</h6>
-                <p class="mb-1 small">Accueil</p>
-                <p class="mb-1 small">Les chats</p>
-                <p class="mb-0 small">FAQ</p>
+                <a href="<?= BASE_URL ?>?url=accueil" class="mb-1 small d-block" style="color: #d4a96a; text-decoration: none;">Accueil</a>
+                <a href="<?= BASE_URL ?>?url=chats" class="mb-1 small d-block" style="color: #d4a96a; text-decoration: none;">Nos chats</a>
+                <a href="<?= BASE_URL ?>?url=contact" class="mb-1 small d-block" style="color: #d4a96a; text-decoration: none;">Contact</a>
+                <a href="<?= BASE_URL ?>?url=faq" class="mb-1 small d-block" style="color: #d4a96a; text-decoration: none;">FAQ</a>
             </div>
 
         </div>
